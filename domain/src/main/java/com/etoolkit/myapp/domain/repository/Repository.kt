@@ -7,4 +7,6 @@ interface Repository {
     suspend fun getHotSales() : ResultData
 
     suspend fun getBestSeller() : ResultData
+
+
 }

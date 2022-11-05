@@ -7,11 +7,16 @@ import androidx.lifecycle.viewModelScope
 import com.etoolkit.myapp.data.network.ApiFactory
 import com.etoolkit.myapp.data.network.RepositoryImpl
 import com.etoolkit.myapp.domain.model.ResultData
+import com.etoolkit.myapp.domain.usecase.GetBestSellerUseCase
+import com.etoolkit.myapp.domain.usecase.GetHotSalesUseCase
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
 
     private val repository = RepositoryImpl(ApiFactory.apiService)
+
+    private val getBestSellerUseCase = GetBestSellerUseCase(repository)
+    private val getHotSalesUseCase = GetHotSalesUseCase(repository)
 
     private val _getHotSalesResult = MutableLiveData<ResultData>()
     val getHotSalesResult : LiveData<ResultData> get() = _getHotSalesResult
@@ -19,16 +24,15 @@ class HomeViewModel : ViewModel() {
     private val _getBestSellerResult = MutableLiveData<ResultData>()
     val getBestSellerResult : LiveData<ResultData> get() = _getBestSellerResult
 
-
     fun getHotSales(){
         viewModelScope.launch {
-            _getHotSalesResult.value = repository.getHotSales()
+            _getHotSalesResult.value = getHotSalesUseCase.invoke()
         }
     }
 
     fun getBestSeller(){
         viewModelScope.launch {
-            _getBestSellerResult.value = repository.getBestSeller()
+            _getBestSellerResult.value = getBestSellerUseCase.invoke()
         }
     }
 
