@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="23dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/search_background"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/info_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/image_container"
+        app:layout_constraintStart_toEndOf="@+id/image_container"
+        app:layout_constraintTop_toTopOf="@+id/image_container">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/mark_pro"
+            android:text="Galaxy Note 20 Ultra"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/image_container"
+            app:layout_constraintTop_toTopOf="@+id/image_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/mark_pro"
+            android:text="$3000.00"
+            android:textColor="@color/text_color_1"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_container"
+            app:layout_constraintStart_toEndOf="@+id/image_container"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/count_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="74dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:backgroundTint="@color/cart_background_view"
+        android:background="@drawable/search_background"
+        app:layout_constraintStart_toEndOf="@+id/info_container"
+        app:layout_constraintTop_toTopOf="@+id/image_container"
+        app:layout_constraintBottom_toBottomOf="@+id/info_container">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/minus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_minus_btn"
+            android:gravity="center"
+            android:backgroundTint="@color/cart_background_view"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textSize="20sp"
+            android:fontFamily="@font/mark_pro"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/plus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_plus_btn"
+            android:backgroundTint="@color/cart_background_view"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete_cart"
+        android:background="@null"
+        app:layout_constraintStart_toEndOf="@+id/count_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/count_container"
+        app:layout_constraintBottom_toBottomOf="@+id/count_container"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

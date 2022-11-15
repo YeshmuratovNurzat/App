@@ -14,4 +14,34 @@
     <color name="background">#F5F5F5</color>
     <color name="tab_selected_active">#FF6E4E</color>
     <color name="tab_selected_inactive">#FFFFFF</color>
+    <color name="grey">#dddddd</color>
+    <color name="red">#FF0000</color>
+    <color name="search_color">#010035</color>
+    <color name="text_color_info">#B7B7B7</color>
+    <color name="color_1">#772D03</color>
+    <color name="color_2">#010035</color>
+    <color name="rating_active">#FFCC01</color>
+    <color name="rating_inactive">#dddddd</color>
+    <color name="color_background_view">#c0c0c0</color>
+    <color name="cart_background_view">#282843</color>
+
+
+    <string-array name="brands">
+        <item>Samsung</item>
+        <item>Huawei</item>
+        <item>Oppo</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>$300 - $500</item>
+        <item>$600 - $800</item>
+        <item>$900 - $1000</item>
+    </string-array>
+
+    <string-array name="sizes">
+        <item>4.5 to 5.5 inches</item>
+        <item>6.5 to 7.5 inches</item>
+        <item>8.5 to 9.5 inches</item>
+    </string-array>
+
 </resources>

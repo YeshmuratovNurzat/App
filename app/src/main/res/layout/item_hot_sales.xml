@@ -11,7 +11,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/hot_sales_image"
         android:layout_width="match_parent"
-        android:layout_height="211dp"
+        android:layout_height="215dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/image"
@@ -22,49 +22,53 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="18dp">
+        android:layout_marginTop="14dp"
+        android:orientation="vertical">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/hot_sales_icon_is_new"
-        android:layout_width="37dp"
-        android:layout_height="37dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/select_category_background"
-        app:roundPercent="1"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/hot_sales_icon_is_new"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="48dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/select_category_background"
+            android:padding="14dp"
+            android:text="New"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:cornerRadius="150dp" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/hot_sales_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Iphone 12"
-        android:textSize="25sp"
-        android:fontFamily="@font/sf_pro_display"
-        android:textStyle="bold"
-        android:layout_marginTop="18dp"
-        android:textColor="@color/white"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hot_sales_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="Iphone 12"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/hot_sales_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Súper. Mega. Rápido."
-        android:textSize="11sp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/white"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hot_sales_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Súper. Mega. Rápido."
+            android:textColor="@color/white"
+            android:textSize="11sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hot_sales_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:backgroundTint="@color/white"
-        android:text="Buy now!"
-        android:textAllCaps="false"
-        android:textSize="11sp"
-        android:textColor="@color/text_color"
-        app:cornerRadius="10dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/hot_sales_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/white"
+            android:text="Buy now!"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="11sp"
+            app:cornerRadius="10dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

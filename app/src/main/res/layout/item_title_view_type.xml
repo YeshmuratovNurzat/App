@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Category"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/mark_pro"
+        android:textColor="@color/text_color"
+        android:layout_marginStart="16dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/see_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="see all"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="119dp"
+        android:fontFamily="@font/mark_pro"
+        android:textColor="@color/text_color"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

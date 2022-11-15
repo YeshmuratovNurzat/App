@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -32,33 +32,38 @@
                 android:id="@+id/menu"
                 android:layout_width="21dp"
                 android:layout_height="17dp"
-                android:layout_gravity="start|center"
-                android:layout_weight="4"
-                android:tint="@color/black"/>
+                android:tint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:drawableStart="@drawable/ic_place"
                 android:drawableEnd="@drawable/ic_keyboard_arrow_down"
                 app:textAllCaps="false"
                 android:fontFamily="@font/mark_pro"
-                android:textColor="@color/black"
-                android:text="Zihuatanejo, Gro"
+                android:textColor="@color/text_color"
+                android:text="@string/location"
                 android:textAlignment="center"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center|end"
                 android:background="@null"
-                android:layout_weight="4"
-                android:src="@drawable/ic_filter" />
+                android:src="@drawable/ic_filter"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/location"
+                app:layout_constraintBottom_toBottomOf="@+id/location"/>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -83,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mark_pro"
-                android:text="Select Category"
+                android:text="@string/select_category_title"
                 android:textColor="@color/text_color"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -97,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="33dp"
                 android:fontFamily="@font/mark_pro"
-                android:text="view all"
+                android:text="@string/view_all_title"
                 android:textColor="@color/text_color_1"
                 app:layout_constraintBottom_toBottomOf="@+id/select_category_title"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,18 +122,17 @@
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/search"
-                style="@style/SearchEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_edit_text"
-                android:drawableStart="@drawable/ic_search"
-                android:fontFamily="@font/mark_pro"
-                android:hint="Search"
+                style="@style/SearchEditText"
+                android:hint="@string/search"
                 android:inputType="text"
-                android:textSize="12sp"
-                android:layout_marginStart="32dp"
+                android:drawablePadding="15dp"
+                android:paddingStart="20dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="82dp"
+                android:layout_marginEnd="80dp"
+                android:background="@drawable/search_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/categoryRecyclerView" />
@@ -152,7 +156,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/mark_pro"
-                android:text="Hot sales"
+                android:text="@string/hot_sales_title"
                 android:textColor="@color/text_color"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -165,11 +169,35 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="13dp"
                 android:fontFamily="@font/mark_pro"
-                android:text="see more"
+                android:text="@string/see_more"
                 android:textColor="@color/text_color_1"
                 app:layout_constraintBottom_toBottomOf="@+id/hot_sales_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/hot_sales_title" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hot_sales_title"
+                app:layout_constraintWidth_percent="0.95"  >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <include layout="@layout/shimmer_hot_sales_layout" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/hotSalesRecyclerView"
@@ -177,6 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
+                android:visibility="invisible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -190,12 +219,12 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/mark_pro"
-                android:text="Best Seller"
+                android:text="@string/best_seller_title"
                 android:textColor="@color/text_color"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hotSalesRecyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/shimmer_container" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/see_more_title_2"
@@ -203,11 +232,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="13dp"
                 android:fontFamily="@font/mark_pro"
-                android:text="see more"
+                android:text="@string/see_more"
                 android:textColor="@color/text_color_1"
                 app:layout_constraintBottom_toBottomOf="@+id/best_seller_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/best_seller_title" />
+
+<!--            <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--                android:id="@+id/shimmer_container"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_gravity="center"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/best_seller_title"-->
+<!--                app:layout_constraintWidth_percent="0.95" >-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <include layout="@layout/shimmer_best_seller_layout" />-->
+<!--                    <include layout="@layout/shimmer_best_seller_layout" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </com.facebook.shimmer.ShimmerFrameLayout>-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/bestSellerRecyclerView"

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mark_pro"
+                android:text="Exynos 990"
+                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_cpu"
+                android:textColor="@color/text_color_info"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mark_pro"
+                android:text="108 + 12 mp"
+                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_camera"
+                android:textColor="@color/text_color_info"
+                android:textStyle="bold"
+                android:layout_marginStart="45dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ssd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mark_pro"
+                android:text="8 GB"
+                android:textSize="12sp"
+                android:textColor="@color/text_color_info"
+                android:textStyle="bold"
+                android:layout_marginStart="45dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mark_pro"
+                android:text="256 GB"
+                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_sd"
+                android:textColor="@color/text_color_info"
+                android:textStyle="bold"
+                android:layout_marginStart="45dp"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select color and capacity"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:fontFamily="@font/mark_pro"
+            android:layout_marginTop="29dp"
+            android:layout_marginStart="30dp"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="30dp">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:id="@+id/color_1"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                app:roundPercent="1"
+                android:background="@color/color_1"
+                app:srcCompat="@drawable/ic_check" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:id="@+id/color_2"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                app:roundPercent="1"
+                android:background="@color/color_2"
+                android:layout_marginStart="18dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sd_info_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/select_category_background"
+                android:text="128 GB"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                app:cornerRadius="12dp"
+                android:layout_marginStart="50dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sd_info_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:text="256 gb"
+                android:textSize="13sp"
+                android:textColor="@color/text_color_info"
+                app:cornerRadius="12dp"
+                android:layout_marginStart="20dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="27dp"
+            android:background="@drawable/curved_background"
+            android:backgroundTint="@color/select_category_background">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to Cart"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/white"
+                android:layout_marginStart="45dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1,500.00"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/white"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="38dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

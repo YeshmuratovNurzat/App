@@ -8,15 +8,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.etoolkit.myapp.R
 import com.etoolkit.myapp.databinding.ItemHotSalesBinding
-import com.etoolkit.myapp.domain.model.HomeStore
-import com.etoolkit.myapp.domain.model.ResultData
+import com.etoolkit.myapp.domain.home.model.HomeStore
 
 class HotSalesAdapter : RecyclerView.Adapter<HotSalesAdapter.HotSalesViewHolder>() {
 
-
     private var homeStore = emptyList<HomeStore>()
 
-    class HotSalesViewHolder(val binding: ItemHotSalesBinding) : RecyclerView.ViewHolder(binding.root){
+    class HotSalesViewHolder(private val binding: ItemHotSalesBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(homeStore : HomeStore){
 
