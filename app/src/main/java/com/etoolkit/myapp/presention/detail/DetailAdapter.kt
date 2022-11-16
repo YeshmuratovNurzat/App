@@ -16,10 +16,10 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
     class DetailViewHolder(private val binding: ItemDetailBinding) : RecyclerView.ViewHolder(binding.root){
 
-        fun bind(resultDataDetail: String){
+        fun bind(image: String){
 
             Glide.with(binding.root)
-                .load(resultDataDetail)
+                .load(image)
                 .centerCrop()
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(binding.detailImage)

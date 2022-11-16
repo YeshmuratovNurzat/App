@@ -53,7 +53,6 @@ class MyCartFragment : Fragment() {
         }
     }
 
-
     // startShimmerAnimation()
     private fun visibilityShimmer(){
         binding.shimmerContainer.startShimmerAnimation()

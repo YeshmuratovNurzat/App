@@ -14,7 +14,7 @@ class SelectCategoryAdapter : RecyclerView.Adapter<SelectCategoryAdapter.SelectC
 
     var category = emptyList<Category>()
 
-    var shopOnClickListener: ((Category) -> Unit)? = null
+    var onClickListener: ((Category) -> Unit)? = null
 
     class SelectCategoryViewHolder(val binding : ItemSelectCategoryBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -34,7 +34,9 @@ class SelectCategoryAdapter : RecyclerView.Adapter<SelectCategoryAdapter.SelectC
         holder.bind(category[position])
 
         holder.binding.root.setOnClickListener {
-            shopOnClickListener?.invoke(category[position])
+            onClickListener?.invoke(category[position])
+            holder.binding.imageSelectCategory.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FF6E4E"))
+            holder.binding.titleSelectCategory.setTextColor(ColorStateList.valueOf(Color.parseColor("#FF6E4E")))
         }
     }
 

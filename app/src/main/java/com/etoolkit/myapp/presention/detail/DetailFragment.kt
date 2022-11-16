@@ -1,7 +1,6 @@
 package com.etoolkit.myapp.presention.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +20,7 @@ class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
     private lateinit var navController: NavController
     private val viewModel by viewModels<DetailViewModel>()
+    var count = 0
 
     private val titles = arrayOf(
         "Shop",
@@ -80,9 +80,8 @@ class DetailFragment : Fragment() {
             navController.navigate(R.id.action_detailFragment_to_myCartFragment)
         }
 
-        var count = 0
-
         binding.btnAdd.setOnClickListener{
+            binding.notificationsBadgeTextView.visibility = View.VISIBLE
             ++count
             binding.notificationsBadgeTextView.text = count.toString()
         }

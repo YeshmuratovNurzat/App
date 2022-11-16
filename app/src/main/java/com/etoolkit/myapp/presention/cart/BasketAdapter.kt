@@ -10,7 +10,6 @@ import com.etoolkit.myapp.databinding.ItemCartLayoutBinding
 import com.etoolkit.myapp.domain.cart.model.Basket
 import com.etoolkit.myapp.domain.cart.model.CartResultData
 
-
 class BasketAdapter : RecyclerView.Adapter<BasketAdapter.BasketHolder>() {
 
     var baskets = emptyList<Basket>()

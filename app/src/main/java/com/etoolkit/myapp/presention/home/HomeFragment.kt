@@ -1,11 +1,13 @@
 package com.etoolkit.myapp.presention.home
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.etoolkit.myapp.R
 import com.etoolkit.myapp.databinding.FilterBottomSheetBinding
 import com.etoolkit.myapp.databinding.FragmentHomeBinding
+import com.etoolkit.myapp.databinding.ItemSelectCategoryBinding
 import com.etoolkit.myapp.domain.home.model.Category
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -45,6 +48,10 @@ class HomeFragment : Fragment() {
         val adapterSelectCategory = SelectCategoryAdapter()
         binding.categoryRecyclerView.adapter = adapterSelectCategory
         adapterSelectCategory.setListData(category)
+
+        adapterSelectCategory.onClickListener = {
+            Toast.makeText(requireContext(),it.title,Toast.LENGTH_SHORT).show()
+        }
 
         val adapterHotSales = HotSalesAdapter()
         binding.hotSalesRecyclerView.adapter = adapterHotSales
