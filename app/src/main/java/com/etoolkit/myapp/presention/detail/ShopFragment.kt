@@ -11,7 +11,6 @@ import com.etoolkit.myapp.databinding.FragmentShopBinding
 class ShopFragment : Fragment() {
 
     private lateinit var binding: FragmentShopBinding
-    private val viewModel by viewModels<DetailViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,6 +1,6 @@
-package com.etoolkit.myapp.domain.cart.model
+package com.etoolkit.myapp.domain.card.model
 
-data class CartResultData(
+data class CardResultData(
     val basket: List<Basket>,
     val delivery: String,
     val id: String,

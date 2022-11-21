@@ -1,4 +1,4 @@
-package com.etoolkit.myapp.domain.cart.model
+package com.etoolkit.myapp.domain.card.model
 
 data class Basket(
     val id: Int,

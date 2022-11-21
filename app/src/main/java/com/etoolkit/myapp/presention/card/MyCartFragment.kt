@@ -1,4 +1,4 @@
-package com.etoolkit.myapp.presention.cart
+package com.etoolkit.myapp.presention.card
 
 import android.os.Bundle
 import android.util.Log
@@ -6,16 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.etoolkit.myapp.R
 import com.etoolkit.myapp.databinding.FragmentMyCartBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MyCartFragment : Fragment() {
 
     private lateinit var binding: FragmentMyCartBinding
-    private val viewModel by viewModels<MyCardViewModel>()
+    private val viewModel by viewModel<MyCardViewModel>()
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {

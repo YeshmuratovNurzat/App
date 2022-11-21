@@ -8,12 +8,11 @@ import com.etoolkit.myapp.data.network.detail.DetailApiFactory
 import com.etoolkit.myapp.data.network.detail.DetailRepositoryImpl
 import com.etoolkit.myapp.domain.detail.model.DataResult
 import com.etoolkit.myapp.domain.detail.model.ResultDataDetail
+import com.etoolkit.myapp.domain.detail.repository.DetailRepository
 import com.etoolkit.myapp.domain.detail.usecase.GetDataDetailUseCase
 import kotlinx.coroutines.launch
 
-class DetailViewModel : ViewModel() {
-
-    private val repository = DetailRepositoryImpl(DetailApiFactory.detailApiService)
+class DetailViewModel(private var repository: DetailRepository) : ViewModel() {
 
     private val getDataDetailUseCase = GetDataDetailUseCase(repository)
 

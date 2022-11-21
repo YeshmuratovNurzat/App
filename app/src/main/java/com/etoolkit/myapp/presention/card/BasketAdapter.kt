@@ -1,4 +1,4 @@
-package com.etoolkit.myapp.presention.cart
+package com.etoolkit.myapp.presention.card
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.etoolkit.myapp.R
 import com.etoolkit.myapp.databinding.ItemCartLayoutBinding
-import com.etoolkit.myapp.domain.cart.model.Basket
-import com.etoolkit.myapp.domain.cart.model.CartResultData
+import com.etoolkit.myapp.domain.card.model.Basket
 
 class BasketAdapter : RecyclerView.Adapter<BasketAdapter.BasketHolder>() {
 

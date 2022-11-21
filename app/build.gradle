@@ -63,4 +63,11 @@ dependencies {
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 
     implementation 'com.mig35:carousellayoutmanager:1.4.6'
+
+    // Koin
+    def koin_version= "3.2.2"
+    // Koin Core features
+    implementation "io.insert-koin:koin-core:$koin_version"
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
 }

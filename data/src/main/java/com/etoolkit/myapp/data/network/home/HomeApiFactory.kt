@@ -18,6 +18,6 @@ object HomeApiFactory {
         .client(httpClient)
         .build()
 
-    val apiService : HomeApiService = retrofit.create(HomeApiService::class.java)
+    val homeApiService : HomeApiService = retrofit.create(HomeApiService::class.java)
 
 }

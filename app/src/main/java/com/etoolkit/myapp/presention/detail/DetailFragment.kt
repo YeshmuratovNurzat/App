@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -14,12 +13,13 @@ import com.etoolkit.myapp.databinding.FragmentDetailBinding
 import com.etoolkit.myapp.presention.util.ZoomCenterCardLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mig35.carousellayoutmanager.CenterScrollListener
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
     private lateinit var navController: NavController
-    private val viewModel by viewModels<DetailViewModel>()
+    private val viewModel by viewModel<DetailViewModel>()
     var count = 0
 
     private val titles = arrayOf(

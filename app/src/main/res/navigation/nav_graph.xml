@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/myCartFragment"
-        android:name="com.etoolkit.myapp.presention.cart.MyCartFragment"
+        android:name="com.etoolkit.myapp.presention.card.MyCartFragment"
         android:label="fragment_my_cart"
         tools:layout="@layout/fragment_my_cart" >
         <action

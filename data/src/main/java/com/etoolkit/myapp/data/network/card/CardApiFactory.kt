@@ -1,11 +1,11 @@
-package com.etoolkit.myapp.data.network.cart
+package com.etoolkit.myapp.data.network.card
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object CartApiFactory {
+object CardApiFactory {
 
     private const val BASE_URL = "https://run.mocky.io/v3/"
 
@@ -18,6 +18,6 @@ object CartApiFactory {
         .client(httpClient)
         .build()
 
-    val cartApiService : CartApiService = retrofit.create(CartApiService::class.java)
+    val cartApiService : CardApiService = retrofit.create(CardApiService::class.java)
 
 }
